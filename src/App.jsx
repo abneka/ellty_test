@@ -9,6 +9,7 @@ import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 const CustomCheckbox = ({ onChange, label }) => {
   const [checked, setChecked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
 
   const toggleChecked = () => {
     setChecked(!checked);
@@ -22,13 +23,14 @@ const CustomCheckbox = ({ onChange, label }) => {
       onClick={toggleChecked}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onMouseDown={(e) => setIsPressed(true)}
+      onMouseUp={(e) => setIsPressed(false)}
     >
       <span>{label}</span>
       <div
-        className={`border border-[#CDCDCD] w-6 h-6 flex justify-center items-center rounded-md cursor-pointer transition-colors ${checked ? isHovered? 'bg-[#366ad0]' : 'bg-blue-500' :  'border-gray-200'}`}
-      >
-        
-          {checked ? <CheckOutlined style={{ color: '#fff' }} /> : isHovered ? <CheckOutlined style={{ color: '#E3E3E3' }} /> : ""}
+        className={`border border-[#CDCDCD] w-6 h-6 flex justify-center items-center rounded-md cursor-pointer transition-colors ${checked ? isHovered? 'bg-[#366ad0]' : 'bg-blue-500' : isPressed ? 'border-[#878787]' : 'border-gray-200'}`}
+      > 
+          {checked ? <CheckOutlined style={{ color: '#fff' }} /> : isPressed ? <CheckOutlined style={{ color: '#878787' }} /> : isHovered ? <CheckOutlined style={{ color: '#E3E3E3' }} /> : ""}
       </div>
     </label>
   );
