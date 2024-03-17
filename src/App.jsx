@@ -28,9 +28,9 @@ const CustomCheckbox = ({ onChange, label }) => {
     >
       <span>{label}</span>
       <div
-        className={`border border-[#CDCDCD] w-6 h-6 flex justify-center items-center rounded-md cursor-pointer transition-colors ${checked ? isHovered? 'bg-[#366ad0]' : 'bg-blue-500' : isPressed ? 'border-[#878787]' : 'border-gray-200'}`}
+        className={`border border-[#CDCDCD] w-6 h-6 flex justify-center items-center rounded-md cursor-pointer transition-colors ${checked ? isPressed ? "border-[#878787]" : isHovered? 'bg-[#5087F8]'  :'bg-[#2469F6]' : isPressed ? 'border-[#878787]' : 'border-gray-200'}`}
       > 
-          {checked ? <CheckOutlined style={{ color: '#fff' }} /> : isPressed ? <CheckOutlined style={{ color: '#878787' }} /> : isHovered ? <CheckOutlined style={{ color: '#E3E3E3' }} /> : ""}
+          {checked ? isPressed ? <CheckOutlined style={{ color: '#878787' }} /> :<CheckOutlined style={{ color: '#fff' }} /> : isPressed ? <CheckOutlined style={{ color: '#878787' }} /> : isHovered ? <CheckOutlined style={{ color: '#E3E3E3' }} /> : ""}
       </div>
     </label>
   );
@@ -69,7 +69,7 @@ function App() {
         </div>
 
         <div className='flex w-full justify-center'>
-          <Button type='primary' size='large' className='bg-[#FFCE22] hover:!bg-[#FFD84D] border-none !text-[#1F2128] w-full'> Done </Button>
+          <Button type='primary' size='large' className={`bg-[#FFCE22] hover:!bg-[#FFD84D] border-none !text-[#1F2128] w-full`}> Done </Button>
         </div>
       </div>
     </div>
