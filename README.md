@@ -1,8 +1,7 @@
-# React + Vite
+# Task Completed: Component Replication Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+I have successfully completed the component replication assignment. The task involved replicating a specified component using HTML, CSS, and JavaScript, ensuring it mirrors the original design's aesthetics and functionality.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Deployment
+I have deployed the completed component to Vercel for hosting. You can view the live version [here](https://vercel.com).
